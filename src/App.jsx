@@ -578,6 +578,123 @@ function StoryCard({ story, index }) {
   );
 }
 
+
+function FieldGuide() {
+  const h2 = {
+    fontFamily: "'Archivo Black', Impact, 'Arial Black', sans-serif",
+    fontSize: "clamp(20px, 3vw, 26px)",
+    color: T.ink,
+    margin: "0 0 10px",
+    lineHeight: 1.15,
+  };
+  const p = {
+    fontFamily: "'Spectral', Georgia, serif",
+    fontSize: 15.5,
+    lineHeight: 1.65,
+    color: T.ink,
+    margin: "0 0 14px",
+  };
+  return (
+    <section style={{ background: T.paper, marginTop: 30 }}>
+      <div style={{ maxWidth: 760, margin: "0 auto", padding: "44px 20px 30px" }}>
+        <div
+          style={{
+            fontFamily: "'Archivo Black', Impact, sans-serif",
+            fontSize: 12,
+            letterSpacing: "0.22em",
+            color: T.circusRed,
+            marginBottom: 6,
+          }}
+        >
+          THE FIELD GUIDE
+        </div>
+        <h1
+          style={{
+            fontFamily: "'Archivo Black', Impact, 'Arial Black', sans-serif",
+            fontSize: "clamp(24px, 4vw, 34px)",
+            color: T.ink,
+            margin: "0 0 8px",
+            lineHeight: 1.1,
+          }}
+        >
+          How to Read the News Like a Pro
+        </h1>
+        <p style={{ ...p, fontStyle: "italic", color: "#4A4550" }}>
+          Three-Ring Government does the side-by-side comparison for you, but the skill of separating fact from
+          spin is worth having everywhere you read. Here's our short course.
+        </p>
+
+        <article style={{ borderTop: `2px solid ${T.ink}`, paddingTop: 22, marginTop: 22 }}>
+          <h2 style={h2}>News vs. Opinion: Know Which One You're Reading</h2>
+          <p style={p}>
+            The single most common way readers get misled isn't fake news — it's opinion content mistaken for
+            reporting. Newspapers and cable networks publish both, often side by side, and the visual difference
+            can be nearly invisible. Before reacting to any article, check where it lives: reputable outlets
+            label opinion pieces as "Opinion," "Editorial," "Analysis," or "Commentary," usually near the byline
+            or section name. On television, prime-time shows are overwhelmingly commentary, while the daytime
+            news desk is closer to straight reporting — even on the same channel.
+          </p>
+          <p style={p}>
+            The language itself is a giveaway. Straight news answers who, what, when, and where, attributes
+            claims to named sources, and keeps adjectives boring. Opinion tells you what to think about those
+            facts: watch for loaded words like "disastrous," "brilliant," "so-called," or "finally," and for
+            arguments about what should happen next. Neither format is bad — good opinion writing is valuable —
+            but you should always know which one you're consuming, because only one of them is trying to
+            persuade you.
+          </p>
+        </article>
+
+        <article style={{ borderTop: "1px solid rgba(0,0,0,0.15)", paddingTop: 22, marginTop: 8 }}>
+          <h2 style={h2}>Double-Check Before You Share: The Two-Minute Verification</h2>
+          <p style={p}>
+            Professional fact-checkers use a technique called lateral reading: instead of studying a suspicious
+            article more closely, they leave it and check what other sources say about the same story and about
+            the outlet itself. You can do this in under two minutes. Open a new tab and search the core claim.
+            If a major event is real, multiple unrelated outlets will have it within hours; if only one site on
+            earth is reporting a blockbuster story, that's a red flag, not a scoop.
+          </p>
+          <p style={p}>
+            Next, find the original source. Most viral political stories are secondhand summaries of a court
+            filing, a bill, a speech, or an agency report — all of which are public documents you can read
+            yourself. A headline saying a ruling "bans" something often looks very different once you skim the
+            ruling. Check the date, too: old stories recirculate during news cycles and read as breaking when
+            they're years stale. And for images, a reverse image search takes seconds and catches photos
+            borrowed from entirely different events.
+          </p>
+        </article>
+
+        <article style={{ borderTop: "1px solid rgba(0,0,0,0.15)", paddingTop: 22, marginTop: 8 }}>
+          <h2 style={h2}>Understanding Bias — Including Your Own</h2>
+          <p style={p}>
+            Media bias is usually less about lying and more about choosing. Outlets choose which stories to
+            cover, which to skip, which expert to quote, which detail leads the headline, and which gets buried
+            in paragraph nine. Two outlets can publish factually accurate stories about the same event that
+            leave readers with opposite impressions — that's exactly the gap this site's "spin meter" measures.
+            Story selection and framing are where the lean lives, so comparing coverage across the spectrum
+            reveals more than any single outlet ever will.
+          </p>
+          <p style={p}>
+            The harder bias to manage is your own. Confirmation bias means we scrutinize stories we dislike and
+            wave through stories we agree with — so the most useful habit in media literacy is applying the same
+            skepticism to news that flatters your side. If a story makes you feel triumphant or furious, that's
+            the moment to slow down and verify, because emotionally satisfying stories are the ones that spread
+            fastest whether or not they're true. A balanced news diet — one straight wire service like AP or
+            Reuters, plus one thoughtful outlet from each side — beats any single "unbiased" source, because no
+            such source exists.
+          </p>
+        </article>
+
+        <p style={{ ...p, marginTop: 10, fontSize: 13.5, color: "#4A4550" }}>
+          Three-Ring Government — The Beltway Bulletin is an independent news-comparison tool. Every story shown
+          is found via live web search of current reporting. We describe each outlet's framing in our own words,
+          link to the original coverage so you can read it yourself, and summarize the verifiable facts down the
+          middle. We don't accept payment for placement, and we never invent quotes or sources.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export default function ThreeRingGovernment() {
   const [mode, setMode] = useState("now");
   const [range, setRange] = useState("today");
@@ -688,6 +805,21 @@ export default function ThreeRingGovernment() {
         <p style={{ color: "rgba(255,255,255,0.6)", fontFamily: "'Spectral', Georgia, serif", fontStyle: "italic", margin: 0 }}>
           The left's take. The right's take. Then the story, down the middle.
         </p>
+        <p
+          style={{
+            color: "rgba(255,255,255,0.55)",
+            fontFamily: "'Spectral', Georgia, serif",
+            fontSize: 15,
+            lineHeight: 1.6,
+            maxWidth: 640,
+            margin: "16px auto 0",
+          }}
+        >
+          Three-Ring Government finds real, current stories about the Executive branch, Congress, the courts,
+          and the statehouses — then shows you how a left-leaning outlet and a right-leaning outlet each covered
+          the same story, with links to their original reporting and a neutral, fact-first summary in between.
+          No fabricated quotes, no invented sources, no side taken.
+        </p>
       </header>
 
       {/* Controls */}
@@ -788,7 +920,7 @@ export default function ThreeRingGovernment() {
           </button>
         </div>
         <p style={{ textAlign: "center", color: "rgba(255,255,255,0.45)", fontFamily: "Georgia, serif", fontSize: 12.5, margin: "-8px 0 18px" }}>
-          Search any government story and get the left take, the right take, and the straight story — or browse with the filters below.
+          Search any government story and get the left take, the right take, and the straight story — or PICK YOUR RINGS below and START THE SHOW.
         </p>
 
         {mode === "now" && (
@@ -823,7 +955,7 @@ export default function ThreeRingGovernment() {
 
         {/* Rings */}
         <div style={{ textAlign: "center", color: "rgba(255,255,255,0.5)", fontFamily: "'Archivo Black', Impact, sans-serif", fontSize: 11, letterSpacing: "0.2em", marginBottom: 8 }}>
-          PICK YOUR RINGS
+          PICK YOUR RINGS AND CLICK START THE SHOW
         </div>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginBottom: 16 }}>
           {RINGS.map((r) => (
@@ -905,7 +1037,9 @@ export default function ThreeRingGovernment() {
         {stories && stories.map((s, i) => <StoryCard key={i} story={s} index={i} />)}
       </main>
 
-      <footer style={{ textAlign: "center", padding: "10px 16px 34px", color: "rgba(255,255,255,0.45)", fontFamily: "Georgia, serif", fontSize: 12.5 }}>
+      <FieldGuide />
+
+      <footer style={{ textAlign: "center", padding: "24px 16px 34px", color: "rgba(255,255,255,0.45)", fontFamily: "Georgia, serif", fontSize: 12.5 }}>
         Every story is real and found via live web search. "From the Left" and "From the Right" describe each
         outlet's framing in our own words — tap through to read their actual coverage. "Down the Middle" is a
         neutral summary of what verifiably happened. Quotes are never invented.
