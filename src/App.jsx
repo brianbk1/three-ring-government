@@ -81,7 +81,7 @@ async function fetchStories({ mode, range, customFrom, customTo, rings, topics, 
 Cover ONLY these parts of government: ${ringText}.
 Topic lenses to prioritize: ${topicText}.`;
 
-  const prompt = `You are the editor of "THREE-RING GOVERNMENT — The Beltway Bulletin", an app that shows how LEFT-leaning and RIGHT-leaning outlets cover the same government story, then gives readers a straight, down-the-middle summary.
+  const prompt = `You are the editor of "DOWN THE MIDDLE — Three-Ring Government", an app that shows how LEFT-leaning and RIGHT-leaning outlets cover the same government story, then gives readers a straight, down-the-middle summary.
 
 ${focusClause}
 SEARCH METHOD (follow this order):
@@ -626,7 +626,7 @@ function FieldGuide() {
           How to Read the News Like a Pro
         </h1>
         <p style={{ ...p, fontStyle: "italic", color: "#4A4550" }}>
-          Three-Ring Government does the side-by-side comparison for you, but the skill of separating fact from
+          Down the Middle does the side-by-side comparison for you, but the skill of separating fact from
           spin is worth having everywhere you read. Here's our short course.
         </p>
 
@@ -691,7 +691,7 @@ function FieldGuide() {
         </article>
 
         <p style={{ ...p, marginTop: 10, fontSize: 13.5, color: "#4A4550" }}>
-          Three-Ring Government — The Beltway Bulletin is an independent news-comparison tool. Every story shown
+          Down the Middle is an independent news-comparison tool covering all three rings of government. Every story shown
           is found via live web search of current reporting. We describe each outlet's framing in our own words,
           link to the original coverage so you can read it yourself, and summarize the verifiable facts down the
           middle. We don't accept payment for placement, and we never invent quotes or sources.
@@ -791,9 +791,9 @@ export default function ThreeRingGovernment() {
             textShadow: `4px 4px 0 ${T.circusRed}`,
           }}
         >
-          THREE-RING
+          DOWN THE
           <br />
-          GOVERNMENT
+          MIDDLE
         </h1>
         <BulbMarquee />
         <p
@@ -806,10 +806,10 @@ export default function ThreeRingGovernment() {
             margin: "6px 0 8px",
           }}
         >
-          The Beltway Bulletin
+          Three-Ring Government • The Beltway Bulletin
         </p>
         <p style={{ color: "rgba(255,255,255,0.6)", fontFamily: "'Spectral', Georgia, serif", fontStyle: "italic", margin: 0 }}>
-          The left's take. The right's take. Then the story, down the middle.
+          The left's take. The right's take. Then the story, down the middle — from all three rings of government.
         </p>
         <p
           style={{
@@ -821,7 +821,7 @@ export default function ThreeRingGovernment() {
             margin: "16px auto 0",
           }}
         >
-          Three-Ring Government finds real, current stories about the Executive branch, Congress, the courts,
+          Down the Middle — our three-ring tour of government — finds real, current stories about the Executive branch, Congress, the courts,
           and the statehouses — then shows you how a left-leaning outlet and a right-leaning outlet each covered
           the same story, with links to their original reporting and a neutral, fact-first summary in between.
           No fabricated quotes, no invented sources, no side taken.
