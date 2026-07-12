@@ -52,9 +52,9 @@ const SPIN_STAMPS = {
 
 function rangeToText(mode, range, customFrom, customTo) {
   if (mode === "upcoming") return "in the upcoming days and weeks (scheduled or announced future events)";
-  if (range === "today") return "from today";
-  if (range === "week") return "from the past 7 days";
-  if (range === "month") return "from the past 30 days";
+  if (range === "today") return "published TODAY or YESTERDAY only";
+  if (range === "week") return "published within the past 7 days";
+  if (range === "month") return "published within the past 30 days";
   if (range === "custom" && customFrom && customTo) return `between ${customFrom} and ${customTo}`;
   return "from the past 7 days";
 }
@@ -84,9 +84,13 @@ Topic lenses to prioritize: ${topicText}.`;
   const prompt = `You are the editor of "THREE-RING GOVERNMENT — The Beltway Bulletin", an app that shows how LEFT-leaning and RIGHT-leaning outlets cover the same government story, then gives readers a straight, down-the-middle summary.
 
 ${focusClause}
-Use web search to find REAL, currently-reported stories that BOTH a left-leaning outlet (e.g. CNN, MSNBC, NYT, WaPo) AND a right-leaning outlet (e.g. Fox News, NY Post, Washington Examiner, WSJ opinion) have covered.
+SEARCH METHOD (follow this order):
+1. First search today's top headlines from major outlets — e.g. searches like "CNN politics today", "Fox News politics today", "Wall Street Journal news today" — to see what the biggest CURRENT government stories are right now.
+2. Pick the freshest stories that BOTH a left-leaning outlet (e.g. CNN, MSNBC, NYT, WaPo) AND a right-leaning outlet (e.g. Fox News, NY Post, Washington Examiner, WSJ opinion) have covered.
+3. Then search for each side's specific coverage of those stories to describe their framing and capture real URLs.
 
 HARD RULES:
+0. RECENCY IS CRITICAL: only include stories whose coverage was published within the requested window. If a story's most recent coverage is older than the window, DISCARD it — do not pad results with stale news. Fewer fresh stories beats more stale ones.
 1. Every story must be real and verifiable in current reporting. Never fabricate events, outlets, or coverage.
 2. URLs must be REAL links that appeared in your search results. If you don't have a real URL for a source, use an empty string "" — NEVER invent or guess a URL.
 3. Describe each outlet's framing in YOUR OWN words (what they emphasize, what they downplay, the tone). Do not copy their headlines or sentences verbatim.
@@ -95,7 +99,7 @@ HARD RULES:
 6. Rate the "spinGap" honestly: "low" = both sides basically agree, "medium" = different emphasis, "chasm" = you'd think they're covering two different planets.
 
 Return exactly 3 to 4 stories. Respond with ONLY a raw JSON array — no markdown fences, no preamble, no trailing text:
-[{"headline":"neutral factual headline, under 12 words","left":{"outlet":"outlet name","framing":"1-2 sentences, their angle in your words","url":"real URL from search or empty string"},"right":{"outlet":"outlet name","framing":"1-2 sentences, their angle in your words","url":"real URL from search or empty string"},"middle":"2-3 sentence neutral factual summary","whyItMatters":"1 sentence on real significance","ring":"one of: Executive, Legislative, Judicial, Sideshow","topic":"one of: Geopolitical, Markets, Entertainment, Legal","date":"short date like Jul 8","spinGap":"low, medium, or chasm"}]`;
+[{"headline":"neutral factual headline, under 12 words","left":{"outlet":"outlet name","framing":"1-2 sentences, their angle in your words","url":"real URL from search or empty string"},"right":{"outlet":"outlet name","framing":"1-2 sentences, their angle in your words","url":"real URL from search or empty string"},"middle":"2-3 sentence neutral factual summary","whyItMatters":"1 sentence on real significance","ring":"one of: Executive, Legislative, Judicial, Sideshow","topic":"one of: Geopolitical, Markets, Entertainment, Legal","date":"short publication date like Jul 11","sortDate":"publication date as YYYY-MM-DD","spinGap":"low, medium, or chasm"}]\nSort the array newest first by sortDate.`;
 
   const response = await fetch("/api/claude", {
     method: "POST",
@@ -118,7 +122,9 @@ Return exactly 3 to 4 stories. Respond with ONLY a raw JSON array — no markdow
   const start = clean.indexOf("[");
   const end = clean.lastIndexOf("]");
   if (start === -1 || end === -1) throw new Error("No JSON found in response");
-  return JSON.parse(clean.slice(start, end + 1));
+  const parsed = JSON.parse(clean.slice(start, end + 1));
+  // Sort newest first by publication date (backstop in case the model doesn't)
+  return parsed.sort((a, b) => (b.sortDate || "").localeCompare(a.sortDate || ""));
 }
 
 // ---------- UI pieces ----------
