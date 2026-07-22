@@ -985,9 +985,9 @@ export default function ThreeRingGovernment() {
               style={{
                 padding: "8px 14px",
                 borderRadius: 999,
-                border: on ? `2px solid ${col}` : "2px solid rgba(255,255,255,0.25)",
+                border: on ? `2px solid ${col}` : "2px solid rgba(0,0,0,0.18)",
                 background: on ? col : "transparent",
-                color: on ? "#fff" : "rgba(255,255,255,0.8)",
+                color: on ? "#fff" : T.ink,
                 fontFamily: "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif",
                 fontSize: 13,
                 fontWeight: 600,
@@ -1106,9 +1106,9 @@ export default function ThreeRingGovernment() {
               style={{
                 padding: "7px 13px",
                 borderRadius: 999,
-                border: on ? `2px solid ${col}` : "2px solid rgba(255,255,255,0.25)",
+                border: on ? `2px solid ${col}` : "2px solid rgba(0,0,0,0.18)",
                 background: on ? col : "transparent",
-                color: on ? "#fff" : "rgba(255,255,255,0.8)",
+                color: on ? "#fff" : T.ink,
                 fontFamily: "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif",
                 fontSize: 13,
                 fontWeight: 600,
