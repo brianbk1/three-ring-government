@@ -98,7 +98,7 @@ HARD RULES:
 5. NEVER invent quotes.
 6. Rate the "spinGap" honestly: "low" = both sides basically agree, "medium" = different emphasis, "chasm" = you'd think they're covering two different planets.
 
-Return exactly 3 to 4 stories. Respond with ONLY a raw JSON array — no markdown fences, no preamble, no trailing text:
+Return exactly 5 stories (or as many as are genuinely fresh — never pad with stale news). Respond with ONLY a raw JSON array — no markdown fences, no preamble, no trailing text:
 [{"headline":"neutral factual headline, under 12 words","left":{"outlet":"outlet name","framing":"1-2 sentences, their angle in your words","url":"real URL from search or empty string"},"right":{"outlet":"outlet name","framing":"1-2 sentences, their angle in your words","url":"real URL from search or empty string"},"middle":"2-3 sentence neutral factual summary","whyItMatters":"1 sentence on real significance","ring":"one of: Executive, Legislative, Judicial, Sideshow","topic":"one of: Geopolitical, Markets, Entertainment, Legal","date":"short publication date like Jul 11","sortDate":"publication date as YYYY-MM-DD","spinGap":"low, medium, or chasm"}]\nSort the array newest first by sortDate.`;
 
   const response = await fetch("/api/claude", {
@@ -106,7 +106,7 @@ Return exactly 3 to 4 stories. Respond with ONLY a raw JSON array — no markdow
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       model: "claude-sonnet-4-6",
-      max_tokens: 2500,
+      max_tokens: 4000,
       messages: [{ role: "user", content: prompt }],
       tools: [{ type: "web_search_20250305", name: "web_search" }],
     }),
@@ -709,6 +709,16 @@ export default function ThreeRingGovernment() {
   const [rings, setRings] = useState(RINGS.map((r) => r.id));
   const [topics, setTopics] = useState(TOPICS.map((t) => t.id));
   const [stories, setStories] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(3);
+  // Post-search result filters (client-side, Apply-driven)
+  const [showFilter, setShowFilter] = useState(false);
+  const [showNarrow, setShowNarrow] = useState(false);
+  const [draftRings, setDraftRings] = useState([]);   // empty = all
+  const [draftTopics, setDraftTopics] = useState([]);
+  const [draftSpin, setDraftSpin] = useState([]);
+  const [appliedRings, setAppliedRings] = useState([]);
+  const [appliedTopics, setAppliedTopics] = useState([]);
+  const [appliedSpin, setAppliedSpin] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadLine, setLoadLine] = useState(LOADING_LINES[0]);
   const [error, setError] = useState("");
@@ -742,6 +752,10 @@ export default function ThreeRingGovernment() {
     setError("");
     setLoading(true);
     setStories(null);
+    setVisibleCount(3);
+    setDraftRings([]); setDraftTopics([]); setDraftSpin([]);
+    setAppliedRings([]); setAppliedTopics([]); setAppliedSpin([]);
+    setShowFilter(false);
     const spin = setInterval(
       () => setLoadLine(LOADING_LINES[Math.floor(Math.random() * LOADING_LINES.length)]),
       1800
@@ -926,7 +940,7 @@ export default function ThreeRingGovernment() {
           </button>
         </div>
         <p style={{ textAlign: "center", color: "rgba(255,255,255,0.45)", fontFamily: "Georgia, serif", fontSize: 12.5, margin: "-8px 0 18px" }}>
-          Search any government story and get the left take, the right take, and the straight story — or PICK YOUR RINGS below and START THE SHOW.
+          Search any story, or just click START THE SHOW for today's top stories. You can filter the results once they load.
         </p>
 
         {mode === "now" && (
@@ -959,29 +973,66 @@ export default function ThreeRingGovernment() {
           </>
         )}
 
-        {/* Rings */}
-        <div style={{ textAlign: "center", color: "rgba(255,255,255,0.5)", fontFamily: "'Archivo Black', Impact, sans-serif", fontSize: 11, letterSpacing: "0.2em", marginBottom: 8 }}>
-          PICK YOUR RINGS AND CLICK START THE SHOW
-        </div>
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginBottom: 16 }}>
-          {RINGS.map((r) => (
-            <Pill key={r.id} active={rings.includes(r.id)} onClick={() => toggleRing(r.id)} activeBg={r.color} title={r.desc}>
-              {r.emoji} {r.label}
-            </Pill>
-          ))}
-        </div>
+        {/* Optional: narrow what gets pulled */}
+        {(() => {
+          const nRings = rings.length < RINGS.length ? RINGS.length - rings.length : 0;
+          const nTopics = topics.length < TOPICS.length ? TOPICS.length - topics.length : 0;
+          const narrowed = (rings.length < RINGS.length || topics.length < TOPICS.length);
+          const chip = (label, on, onClick, col) => (
+            <button
+              key={label}
+              onClick={onClick}
+              style={{
+                padding: "8px 14px",
+                borderRadius: 999,
+                border: on ? `2px solid ${col}` : "2px solid rgba(255,255,255,0.25)",
+                background: on ? col : "transparent",
+                color: on ? "#fff" : "rgba(255,255,255,0.8)",
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif",
+                fontSize: 13,
+                fontWeight: 600,
+                cursor: "pointer",
+              }}
+            >
+              {label}
+            </button>
+          );
+          return (
+            <div style={{ textAlign: "center", marginBottom: 20 }}>
+              <button
+                onClick={() => setShowNarrow((v) => !v)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  color: "rgba(255,255,255,0.65)",
+                  fontFamily: "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif",
+                  fontSize: 14,
+                  cursor: "pointer",
+                  padding: "4px 8px",
+                }}
+              >
+                {showNarrow ? "▲" : "▼"} Narrow what I pull{narrowed ? " (on)" : " (optional)"}
+              </button>
 
-        {/* Topics — WSJ-style tabs, multi-select */}
-        <div style={{ textAlign: "center", color: "rgba(255,255,255,0.5)", fontFamily: "'Archivo Black', Impact, sans-serif", fontSize: 11, letterSpacing: "0.2em", marginBottom: 8 }}>
-          PICK YOUR TOPICS
-        </div>
-        <div style={{ marginBottom: 24 }}>
-          <WsjTabs
-            items={TOPICS.map((t) => ({ id: t.id, label: t.label }))}
-            isActive={(id) => topics.includes(id)}
-            onSelect={toggleTopic}
-          />
-        </div>
+              {showNarrow && (
+                <div style={{ background: T.paper, borderRadius: 10, padding: "18px 20px", marginTop: 10, textAlign: "left" }}>
+                  <div style={{ marginBottom: 14 }}>
+                    <div style={{ fontFamily: "'Archivo Black', Impact, sans-serif", fontSize: 11, letterSpacing: "0.14em", color: T.faded, marginBottom: 8 }}>BRANCHES</div>
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      {RINGS.map((r) => chip(`${r.emoji} ${r.label}`, rings.includes(r.id), () => toggleRing(r.id), r.color))}
+                    </div>
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: "'Archivo Black', Impact, sans-serif", fontSize: 11, letterSpacing: "0.14em", color: T.faded, marginBottom: 8 }}>TOPICS</div>
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      {TOPICS.map((t) => chip(t.label, topics.includes(t.id), () => toggleTopic(t.id), T.win))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })()}
 
         <div style={{ textAlign: "center", marginBottom: 30 }}>
           <button
@@ -1040,7 +1091,127 @@ export default function ThreeRingGovernment() {
             Somehow… a quiet day under the big top. Try a wider date range.
           </p>
         )}
-        {stories && stories.map((s, i) => <StoryCard key={i} story={s} index={i} />)}
+        {stories && stories.length > 0 && (() => {
+          const filtered = stories.filter(
+            (s) =>
+              (appliedRings.length === 0 || appliedRings.includes(s.ring)) &&
+              (appliedTopics.length === 0 || appliedTopics.includes(s.topic)) &&
+              (appliedSpin.length === 0 || appliedSpin.includes(s.spinGap))
+          );
+          const activeCount = appliedRings.length + appliedTopics.length + appliedSpin.length;
+          const chip = (label, on, onClick, col) => (
+            <button
+              key={label}
+              onClick={onClick}
+              style={{
+                padding: "7px 13px",
+                borderRadius: 999,
+                border: on ? `2px solid ${col}` : "2px solid rgba(255,255,255,0.25)",
+                background: on ? col : "transparent",
+                color: on ? "#fff" : "rgba(255,255,255,0.8)",
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif",
+                fontSize: 13,
+                fontWeight: 600,
+                cursor: "pointer",
+              }}
+            >
+              {label}
+            </button>
+          );
+          const toggleDraft = (val, list, setList) =>
+            setList(list.includes(val) ? list.filter((x) => x !== val) : [...list, val]);
+          return (
+            <>
+              {/* Filter toggle */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+                <button
+                  onClick={() => {
+                    setDraftRings(appliedRings); setDraftTopics(appliedTopics); setDraftSpin(appliedSpin);
+                    setShowFilter((v) => !v);
+                  }}
+                  style={{
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.3)",
+                    borderRadius: 999,
+                    color: "#fff",
+                    fontFamily: "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif",
+                    fontSize: 14,
+                    fontWeight: 600,
+                    padding: "9px 18px",
+                    cursor: "pointer",
+                  }}
+                >
+                  ⚙ Filter results{activeCount > 0 ? ` (${activeCount})` : ""}
+                </button>
+                <span style={{ color: "rgba(255,255,255,0.55)", fontFamily: "'Spectral', Georgia, serif", fontSize: 13.5 }}>
+                  Showing {Math.min(filtered.length, visibleCount)} of {filtered.length}
+                  {activeCount > 0 ? ` filtered` : ""} {filtered.length === 1 ? "story" : "stories"}
+                </span>
+              </div>
+
+              {/* Filter panel */}
+              {showFilter && (
+                <div style={{ background: T.paper, borderRadius: 10, padding: "18px 20px", marginTop: 2 }}>
+                  <div style={{ marginBottom: 12 }}>
+                    <div style={{ fontFamily: "'Archivo Black', Impact, sans-serif", fontSize: 11, letterSpacing: "0.14em", color: T.faded, marginBottom: 8 }}>BRANCH</div>
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      {RINGS.map((r) => chip(`${r.emoji} ${r.label}`, draftRings.includes(r.id), () => toggleDraft(r.id, draftRings, setDraftRings), r.color))}
+                    </div>
+                  </div>
+                  <div style={{ marginBottom: 12 }}>
+                    <div style={{ fontFamily: "'Archivo Black', Impact, sans-serif", fontSize: 11, letterSpacing: "0.14em", color: T.faded, marginBottom: 8 }}>TOPIC</div>
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      {TOPICS.map((t) => chip(t.label, draftTopics.includes(t.id), () => toggleDraft(t.id, draftTopics, setDraftTopics), T.win))}
+                    </div>
+                  </div>
+                  <div style={{ marginBottom: 16 }}>
+                    <div style={{ fontFamily: "'Archivo Black', Impact, sans-serif", fontSize: 11, letterSpacing: "0.14em", color: T.faded, marginBottom: 8 }}>SPIN GAP</div>
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      {[["low","Mild Spin"],["medium","Spin Cycle"],["chasm","Two Different Planets"]].map(([id,label]) =>
+                        chip(label, draftSpin.includes(id), () => toggleDraft(id, draftSpin, setDraftSpin), (SPIN_STAMPS[id]||{}).color || T.circusRed))}
+                    </div>
+                  </div>
+                  <div style={{ display: "flex", gap: 10 }}>
+                    <button
+                      onClick={() => {
+                        setAppliedRings(draftRings); setAppliedTopics(draftTopics); setAppliedSpin(draftSpin);
+                        setVisibleCount(3); setShowFilter(false);
+                      }}
+                      style={{ background: T.circusRed, color: "#fff", border: "none", borderRadius: 8, padding: "11px 26px", fontFamily: "'Archivo Black', Impact, sans-serif", fontSize: 14, letterSpacing: "0.04em", cursor: "pointer" }}
+                    >
+                      APPLY
+                    </button>
+                    <button
+                      onClick={() => { setDraftRings([]); setDraftTopics([]); setDraftSpin([]); }}
+                      style={{ background: "transparent", color: T.faded, border: `1px solid ${T.faded}`, borderRadius: 8, padding: "11px 20px", fontFamily: "-apple-system, sans-serif", fontSize: 13.5, fontWeight: 600, cursor: "pointer" }}
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {filtered.length === 0 && (
+                <p style={{ color: "rgba(255,255,255,0.7)", textAlign: "center", fontFamily: "Georgia, serif" }}>
+                  No stories match these filters. <button onClick={() => { setAppliedRings([]); setAppliedTopics([]); setAppliedSpin([]); }} style={{ background: "none", border: "none", color: "#7ED0E0", cursor: "pointer", fontFamily: "Georgia, serif", fontSize: 15, textDecoration: "underline" }}>Clear filters</button>
+                </p>
+              )}
+
+              {filtered.slice(0, visibleCount).map((s, i) => <StoryCard key={i} story={s} index={i} />)}
+
+              {filtered.length > visibleCount && (
+                <div style={{ textAlign: "center", marginTop: 4 }}>
+                  <button
+                    onClick={() => setVisibleCount((c) => c + 3)}
+                    style={{ background: "transparent", color: "#fff", border: "2px solid rgba(255,255,255,0.4)", borderRadius: 999, padding: "12px 30px", fontFamily: "'Archivo Black', Impact, sans-serif", fontSize: 14, letterSpacing: "0.05em", cursor: "pointer" }}
+                  >
+                    SHOW MORE ({filtered.length - visibleCount} MORE)
+                  </button>
+                </div>
+              )}
+            </>
+          );
+        })()}
       </main>
 
       <FieldGuide />
