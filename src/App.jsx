@@ -1218,7 +1218,7 @@ export default function ThreeRingGovernment() {
 
       <footer style={{ textAlign: "center", padding: "24px 16px 34px", color: "rgba(255,255,255,0.45)", fontFamily: "Georgia, serif", fontSize: 12.5 }}>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "4px 16px", marginBottom: 14 }}>
-          {[["/media-literacy.html", "Media Literacy Guide"], ["/about.html", "About"], ["/contact.html", "Contact"], ["/privacy.html", "Privacy"], ["/terms.html", "Terms"]].map(([href, label]) => (
+          {[["/blog/index.html", "Blog"], ["/media-literacy.html", "Media Literacy Guide"], ["/about.html", "About"], ["/contact.html", "Contact"], ["/privacy.html", "Privacy"], ["/terms.html", "Terms"]].map(([href, label]) => (
             <a key={href} href={href} style={{ color: "rgba(233,241,251,0.75)", textDecoration: "none", fontSize: 12.5 }}>{label}</a>
           ))}
         </div>
