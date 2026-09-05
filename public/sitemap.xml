@@ -14,9 +14,21 @@
   </url>
   <url>
     <loc>https://www.downthemiddle.ai/blog/index.html</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.downthemiddle.ai/blog/august-jobs-report-162000-what-both-sides-see.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.downthemiddle.ai/blog/national-debt-40-trillion.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.downthemiddle.ai/blog/markets-rates-taxes-three-things-to-watch.html</loc>
