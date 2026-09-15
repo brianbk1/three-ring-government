@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import InstagramFeed from "./components/InstagramFeed";
 
 // ---------- Design tokens: blue & white, red for emphasis only ----------
 const T = {
@@ -1215,6 +1216,8 @@ export default function ThreeRingGovernment() {
       </main>
 
       <FieldGuide />
+
+      <InstagramFeed />
 
       <footer style={{ textAlign: "center", padding: "24px 16px 34px", color: "rgba(255,255,255,0.45)", fontFamily: "Georgia, serif", fontSize: 12.5 }}>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "4px 16px", marginBottom: 14 }}>
