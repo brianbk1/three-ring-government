@@ -790,6 +790,41 @@ export default function ThreeRingGovernment() {
         button:focus-visible, input:focus-visible { outline: 3px solid ${T.marquee}; outline-offset: 2px; }
       `}</style>
 
+      {/* Top nav — Recent Stories up front */}
+      <nav
+        aria-label="Primary"
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "6px 18px",
+          padding: "10px 16px",
+          background: T.stageDeep,
+          borderBottom: "1px solid rgba(233,241,251,0.12)",
+          fontFamily: "-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+          fontSize: 13.5,
+        }}
+      >
+        <a
+          href="/blog/index.html"
+          style={{
+            color: "#fff",
+            background: T.circusRed,
+            padding: "5px 12px",
+            borderRadius: 999,
+            fontWeight: 700,
+            textDecoration: "none",
+            letterSpacing: "0.02em",
+          }}
+        >
+          📰 Recent Stories
+        </a>
+        {[["/media-literacy.html", "Media Literacy Guide"], ["/about.html", "About"], ["/contact.html", "Contact"]].map(([href, label]) => (
+          <a key={href} href={href} style={{ color: "rgba(233,241,251,0.8)", textDecoration: "none" }}>{label}</a>
+        ))}
+      </nav>
+
       <OverturnOMeter stat={scotus} failed={scotusFailed} />
       <Ticker />
       <TentStripes />
@@ -1221,7 +1256,7 @@ export default function ThreeRingGovernment() {
 
       <footer style={{ textAlign: "center", padding: "24px 16px 34px", color: "rgba(255,255,255,0.45)", fontFamily: "Georgia, serif", fontSize: 12.5 }}>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "4px 16px", marginBottom: 14 }}>
-          {[["/blog/index.html", "Blog"], ["/media-literacy.html", "Media Literacy Guide"], ["/about.html", "About"], ["/contact.html", "Contact"], ["/privacy.html", "Privacy"], ["/terms.html", "Terms"]].map(([href, label]) => (
+          {[["/media-literacy.html", "Media Literacy Guide"], ["/about.html", "About"], ["/contact.html", "Contact"], ["/privacy.html", "Privacy"], ["/terms.html", "Terms"]].map(([href, label]) => (
             <a key={href} href={href} style={{ color: "rgba(233,241,251,0.75)", textDecoration: "none", fontSize: 12.5 }}>{label}</a>
           ))}
         </div>
