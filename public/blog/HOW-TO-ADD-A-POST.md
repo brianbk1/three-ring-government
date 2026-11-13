@@ -4,6 +4,16 @@ Your blog lives in `public/blog/`. Each post is a standalone HTML file, and
 the blog landing page (`index.html`) builds its list automatically from a
 short list near the bottom of that file. Here's the weekly routine.
 
+## House rule: every post carries data
+Every post must include real data and analysis, not just narrative:
+- a **By the numbers** row of stat tiles with sourced figures
+- at least **two charts** (trend, comparison, or share) built from cited numbers
+- a **timeline / "who broke what"** view when the story developed over days
+- **2–3 labeled insights** that tell the reader something the headlines didn't
+- **every source linked** in the Sources list; label estimates and unverified claims on the chart itself
+
+When a story develops, publish a **new post** and link back to the earlier one instead of rewriting the old post.
+
 ## The steps
 
 ### 1. Create the post file
