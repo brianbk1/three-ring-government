@@ -1,0 +1,74 @@
+{
+ "slug": "scotus-asylum-ban-border-data-november-2026",
+ "date": "NOV 13, 2026",
+ "kicker": "SUPREME COURT",
+ "headline": [
+  "THE COURT",
+  "WILL DECIDE",
+  "TRUMP'S"
+ ],
+ "accent_line": "ASYLUM BAN",
+ "hook": [
+  "Lower courts called it illegal. It's still in effect.",
+  "The White House says it fixed the border. Challengers say crossings were already falling. The data says both are partly right."
+ ],
+ "cta": "What the numbers really show →",
+ "hero_title": [
+  "The Court Takes Up",
+  "Trump's Asylum Ban"
+ ],
+ "hero_sub": "Border Patrol southwest apprehensions, FY2021–FY2026",
+ "data": {
+  "title": [
+   "TWO DROPS,",
+   "NOT ONE"
+  ],
+  "subtitle": "Border Patrol apprehensions at the southwest border, by fiscal year (millions)",
+  "bars": [
+   [
+    "FY21",
+    1.659,
+    "1.66M"
+   ],
+   [
+    "FY22",
+    2.206,
+    "2.21M"
+   ],
+   [
+    "FY23",
+    2.046,
+    "2.05M"
+   ],
+   [
+    "FY24",
+    1.531,
+    "1.53M"
+   ],
+   [
+    "FY25",
+    0.238,
+    "0.24M",
+    true
+   ],
+   [
+    "FY26",
+    0.099,
+    "0.10M",
+    true
+   ]
+  ],
+  "unit_note": "Red = years the asylum ban was in place (it took effect Jan. 20, 2025, mid-FY25)",
+  "callouts": [
+   [
+    "−77%",
+    "Dec. 2023 peak → Oct. 2024, before the ban"
+   ],
+   [
+    "−87%",
+    "Oct. 2024 → Mar. 2025, as the ban took hold"
+   ]
+  ],
+  "source": "Pew Research Center; DHS/CBP (FY26 preliminary); CBP monthly data"
+ }
+}
