@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.downthemiddle.ai/blog/nvidia-huang-resigns-what-the-numbers-say-november-2026.html</loc>
+    <lastmod>2026-11-13</lastmod>
+  </url>
+  <url>
     <loc>https://www.downthemiddle.ai/</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>daily</changefreq>
@@ -8,7 +12,7 @@
   </url>
   <url>
     <loc>https://www.downthemiddle.ai/blog/index.html</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
