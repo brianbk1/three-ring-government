@@ -876,6 +876,25 @@ export default function ThreeRingGovernment() {
           the same story, with links to their original reporting and a neutral, fact-first summary in between.
           No fabricated quotes, no invented sources, no side taken.
         </p>
+        <a
+          href="/blog/index.html"
+          style={{
+            display: "inline-block",
+            marginTop: 22,
+            padding: "12px 26px",
+            background: T.circusRed,
+            color: "#fff",
+            borderRadius: 999,
+            fontFamily: "'Archivo Black', Impact, sans-serif",
+            fontSize: 15,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            textDecoration: "none",
+            boxShadow: "0 4px 14px rgba(0,0,0,0.35)",
+          }}
+        >
+          Read the Stories →
+        </a>
       </header>
 
       {/* Controls */}
