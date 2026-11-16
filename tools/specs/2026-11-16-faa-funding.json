@@ -1,0 +1,76 @@
+{
+ "slug": "faa-ground-stop-50-billion-funding-fight-november-2026",
+ "date": "NOV 16, 2026",
+ "kicker": "CONGRESS • AVIATION",
+ "headline": [
+  "THE FAA HALTED",
+  "U.S. TAKEOFFS.",
+  "NOW THE ASK IS"
+ ],
+ "accent_line": "$50 BILLION",
+ "hook": [
+  "Friday's ground stop scrapped 14,000+ flights over two days.",
+  "The White House says Congress must pay up. Democrats say the last $12.5 billion is mostly unspent. Both are partly right."
+ ],
+ "cta": "Where the money actually stands →",
+ "hero_title": [
+  "After the Ground Stop,",
+  "a $50 Billion Ask"
+ ],
+ "hero_sub": "Air traffic control money: spent, obligated, approved and requested ($ billions)",
+ "data": {
+  "title": [
+   "$1B SPENT.",
+   "$50B ASKED."
+  ],
+  "subtitle": "Air traffic control modernization money, in billions of dollars",
+  "bars": [
+   [
+    "SPENT",
+    1.0,
+    "~$1B"
+   ],
+   [
+    "OBLIGATED",
+    4.3,
+    "$4.3B"
+   ],
+   [
+    "APPROVED",
+    12.5,
+    "$12.5B"
+   ],
+   [
+    "ASK NOV 12",
+    30,
+    "$30B",
+    true
+   ],
+   [
+    "ASK NOV 13",
+    50,
+    "$50B",
+    true
+   ]
+  ],
+  "unit_note": "Spent/obligated: Democratic lawmakers' figures, of the $12.5B approved July 2025",
+  "callouts": [
+   [
+    "+$20B",
+    "Added to the ask in one day, without an itemized plan"
+   ],
+   [
+    "$1.16B",
+    "Telecom shortfall vs. FAA's own estimate, per GAO"
+   ]
+  ],
+  "source": "Roll Call; AP; USA Today; GAO-26-107992 via Airways"
+ },
+ "hero_labels": [
+  "Spent",
+  "Oblig.",
+  "Appr.",
+  "Nov 12",
+  "Nov 13"
+ ]
+}
