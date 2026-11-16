@@ -4,7 +4,7 @@
 Usage:  python3 tools/ig_slides.py spec.json
 Spec keys:
   slug, date ("NOV 13, 2026"), kicker, headline (list of lines), accent_line,
-  hook (list of lines), cta, story_url,
+  hook (list of lines), cta, story_url, hero_labels (optional short bar labels for the hero),
   data: {title (list), subtitle, bars: [[label, value, display, highlight?]], unit_note,
          callouts: [[big, label]], source}
 Outputs public/blog/assets/<slug>-ig-1.png (story), -ig-2.png (data), -hero.png (1200x800).
@@ -126,7 +126,8 @@ def hero(s,out):
     for i,b in enumerate(bars):
         h=max(8,int(b[1]/mx*470)); x=x0+i*(bw+gap)
         d.rounded_rectangle([x,base-h,x+bw,base],8,fill=RED if (len(b)>3 and b[3]) else (70,98,140))
-        d.text((x+bw/2,base+30),b[0],font=font("sb",19),fill=MUTED,anchor="ms")
+        lab=s.get("hero_labels",[r[0] for r in bars])[i]
+        d.text((x+bw/2,base+30),lab,font=font("sb",19),fill=MUTED,anchor="ms")
     d.rounded_rectangle([60,66,84,90],5,fill=RED); d.text((98,60),"DOWN THE MIDDLE",font=font("xb",26),fill=WHITE)
     y=180
     for ln in s["hero_title"]:
