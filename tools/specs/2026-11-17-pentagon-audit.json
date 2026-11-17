@@ -1,0 +1,40 @@
+{
+ "slug": "pentagon-fails-ninth-audit-1-5-trillion-budget-november-2026",
+ "date": "NOV 17, 2026",
+ "kicker": "THE PENTAGON • BUDGET",
+ "headline": [
+  "9 AUDITS.",
+  "9 FAILURES.",
+  "NOW THE ASK IS"
+ ],
+ "accent_line": "$1.5 TRILLION",
+ "hook": [
+  "The Pentagon failed its ninth straight audit on Monday, covering $4.9 trillion in assets.",
+  "The CFO says most assets now pass. The IG says fewer weaknesses came from consolidation, not fixes."
+ ],
+ "cta": "What the audit actually found →",
+ "hero_title": [
+  "Ninth Failed Audit,",
+  "$1.5 Trillion Ask"
+ ],
+ "hero_sub": "Pentagon assets and liabilities examined in the FY2026 audit vs. the FY2027 defense request ($ trillions)",
+ "data": {
+  "title": [
+   "$1.5T ASKED.",
+   "9 FAILED AUDITS."
+  ],
+  "subtitle": "FY2026 audit totals vs. the FY2027 national defense request, in trillions of dollars",
+  "bars": [
+   ["ASSETS", 4.9, "$4.9T"],
+   ["LIABILITIES", 5.2, "$5.2T"],
+   ["FY27 ASK", 1.5, "$1.5T", true]
+  ],
+  "unit_note": "Assets/liabilities: FY2026 audit (Breaking Defense). Ask: White House topline",
+  "callouts": [
+   ["26 → 14", "Material weaknesses: merged, not fixed, per the IG"],
+   ["56%", "Share of assets now on clean opinions, per Pentagon CFO"]
+  ],
+  "source": "Breaking Defense; Reuters; DoW OIG via Daily Caller; The New American"
+ },
+ "hero_labels": ["Assets", "Liab.", "Ask"]
+}
