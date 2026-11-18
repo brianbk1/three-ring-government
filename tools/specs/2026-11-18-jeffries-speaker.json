@@ -1,0 +1,41 @@
+{
+ "slug": "jeffries-speaker-nomination-251-11-house-math-november-2026",
+ "date": "NOV 18, 2026",
+ "kicker": "CONGRESS • THE HOUSE",
+ "headline": [
+  "251 TO 11.",
+  "JEFFRIES IS",
+  "THE NOMINEE."
+ ],
+ "accent_line": "NEXT: 218 VOTES",
+ "hook": [
+  "House Democrats nominated Hakeem Jeffries for speaker in a closed-door vote. Nobody ran against him.",
+  "With at least 257 seats, the 11 no votes can't block him on Jan. 3. The fight is over what he promises."
+ ],
+ "cta": "The math behind the vote →",
+ "hero_title": [
+  "251–11 for Jeffries.",
+  "Next: 218 on Jan. 3"
+ ],
+ "hero_sub": "Democratic House seats vs. votes needed to elect a speaker and caucus votes against Jeffries",
+ "data": {
+  "title": [
+   "257 SEATS.",
+   "11 NO VOTES."
+  ],
+  "subtitle": "House Democrats' seats vs. the 218 needed to elect a speaker and the votes against Jeffries",
+  "bars": [
+   ["DEM SEATS", 257, "257", true],
+   ["NEEDED", 218, "218"],
+   ["GOP SEATS", 171, "171"],
+   ["NO VOTES", 11, "11"]
+  ],
+  "unit_note": "Seats: AP calls as of Nov 16, 7 races uncalled. No votes: caucus ballot, Nov 18",
+  "callouts": [
+   ["39", "Votes to spare above 218 (our calculation)"],
+   ["~13 pts", "Est. Dem House vote margin, widest midterm since 1974"]
+  ],
+  "source": "Reuters; Semafor; AP via Congress Countdown; CFR; Yahoo News"
+ },
+ "hero_labels": ["Dem", "Need", "GOP", "No"]
+}
