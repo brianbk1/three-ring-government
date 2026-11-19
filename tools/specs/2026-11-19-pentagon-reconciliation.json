@@ -1,0 +1,69 @@
+{
+ "slug": "senate-gop-pauses-350-billion-pentagon-reconciliation-november-2026",
+ "date": "NOV 19, 2026",
+ "kicker": "CONGRESS • THE SENATE",
+ "headline": [
+  "$350 BILLION.",
+  "SENATE GOP",
+  "HITS PAUSE."
+ ],
+ "accent_line": "3 VOTES TO SPARE.",
+ "hook": [
+  "Trump wants $350 billion more for the Pentagon in a party-line bill before Democrats take the Senate.",
+  "Senate Republicans are holding off to seek a deal with Democrats. The calendar is the hard part."
+ ],
+ "cta": "The math behind the pause →",
+ "hero_title": [
+  "$350B ask.",
+  "Senate GOP pauses."
+ ],
+ "hero_sub": "The $350B request vs. past reconciliation bills and what a key GOP chair says is workable",
+ "data": {
+  "title": [
+   "$350B ASKED.",
+   "~$100B WORKABLE?"
+  ],
+  "subtitle": "The Pentagon's reconciliation ask vs. past party-line bills and a GOP chair's estimate",
+  "bars": [
+   [
+    "PENTAGON ASK",
+    350,
+    "$350B",
+    true
+   ],
+   [
+    "2025 LAW",
+    157,
+    "$157B"
+   ],
+   [
+    "ROGERS EST.",
+    100,
+    "~$100B"
+   ],
+   [
+    "2026 BORDER LAW",
+    70,
+    "$70B"
+   ]
+  ],
+  "unit_note": "2025 law = defense money in the One Big Beautiful Bill. Rogers figure is his rough estimate",
+  "callouts": [
+   [
+    "53–47",
+    "Senate GOP edge now. It can lose only 3 votes"
+   ],
+   [
+    "Dec. 11",
+    "Government funding deadline"
+   ]
+  ],
+  "source": "Washington Post; The Hill; Military.com; Ballotpedia"
+ },
+ "hero_labels": [
+  "Ask",
+  "2025",
+  "Rogers",
+  "Border"
+ ]
+}
