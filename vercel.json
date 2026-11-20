@@ -1,0 +1,35 @@
+{
+  "rewrites": [
+    {
+      "source": "/feed",
+      "destination": "/feed.xml"
+    },
+    {
+      "source": "/rss",
+      "destination": "/feed.xml"
+    },
+    {
+      "source": "/blog/feed",
+      "destination": "/feed.xml"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/feed.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/rss+xml; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=3600"
+        }
+      ]
+    }
+  ]
+}
