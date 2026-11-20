@@ -1,0 +1,66 @@
+{
+ "slug": "senate-passes-permitting-overhaul-62-33-150-day-lawsuit-window-november-2026",
+ "date": "NOV 20, 2026",
+ "kicker": "CONGRESS • THE SENATE",
+ "headline": [
+  "62–33.",
+  "SENATE PASSES",
+  "BUILD-FASTER BILL."
+ ],
+ "accent_line": "NEXT: THE HOUSE.",
+ "hook": [
+  "The Senate passed a 494-page overhaul of how energy projects get permitted and sued over.",
+  "15 in the Democratic caucus voted yes. 31 Democrats voted no."
+ ],
+ "cta": "What the bill changes, by the numbers →",
+ "hero_title": [
+  "62–33.",
+  "Permitting bill",
+  "clears Senate."
+ ],
+ "hero_sub": "Days to sue over a federal environmental review: today's limits vs. the Senate bill",
+ "data": {
+  "title": [
+   "6 YEARS TO SUE",
+   "BECOMES 150 DAYS"
+  ],
+  "subtitle": "Days to file a lawsuit over a federal environmental review",
+  "bars": [
+   [
+    "DEFAULT LIMIT",
+    2190,
+    "6 yrs",
+    false
+   ],
+   [
+    "FAST-41 PROJECTS",
+    730,
+    "2 yrs",
+    false
+   ],
+   [
+    "SENATE BILL",
+    150,
+    "150 days",
+    true
+   ]
+  ],
+  "unit_note": "Default = 6-year federal limit, 28 U.S.C. 2401(a). FAST-41 = covered big projects",
+  "callouts": [
+   [
+    "2,061 GW",
+    "Power projects waiting in grid queues, end of 2025"
+   ],
+   [
+    "4.5 yrs",
+    "Average environmental impact statement, 2010–18"
+   ]
+  ],
+  "source": "Politico; Roll Call; Uprise RI; Legis1; LBNL; CEQ"
+ },
+ "hero_labels": [
+  "6 yrs",
+  "2 yrs",
+  "150 d"
+ ]
+}
