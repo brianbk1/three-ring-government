@@ -1,0 +1,66 @@
+{
+ "slug": "fifth-circuit-proxy-voting-ruling-pregnant-workers-act-9-8-november-2026",
+ "date": "NOV 23, 2026",
+ "kicker": "THE COURTS • FIFTH CIRCUIT",
+ "headline": [
+  "9–8.",
+  "PROXY QUORUM",
+  "RULED INVALID."
+ ],
+ "accent_line": "SCOTUS NEXT?",
+ "hook": [
+  "A divided appeals court says the House broke the Quorum Clause passing a $1.7 trillion bill.",
+  "226 of the 427 recorded votes were cast by proxy."
+ ],
+ "cta": "The proxy-vote math, by the numbers →",
+ "hero_title": [
+  "9–8.",
+  "Proxy votes",
+  "don't count."
+ ],
+ "hero_sub": "Dec. 23, 2022 House vote on the $1.7T bill: 226 proxy votes vs. a 216-member quorum vs. 201 in person (DTM calc.)",
+ "data": {
+  "title": [
+   "226 OF 427 VOTES",
+   "WERE CAST BY PROXY"
+  ],
+  "subtitle": "House vote on the $1.7 trillion spending bill, Dec. 23, 2022",
+  "bars": [
+   [
+    "BY PROXY",
+    226,
+    "226",
+    true
+   ],
+   [
+    "QUORUM NEEDED",
+    216,
+    "216*",
+    false
+   ],
+   [
+    "IN PERSON",
+    201,
+    "201*",
+    false
+   ]
+  ],
+  "unit_note": "*DTM calc: 427 recorded votes minus 226 proxies; quorum = majority of 431 members",
+  "callouts": [
+   [
+    "9–8",
+    "En banc Fifth Circuit vote, Nov. 20, 2026"
+   ],
+   [
+    "Texas only",
+    "Where the pregnant-worker law is blocked, for now"
+   ]
+  ],
+  "source": "5th Cir. opinion No. 24-10386; House Clerk; Reuters"
+ },
+ "hero_labels": [
+  "226",
+  "216",
+  "201"
+ ]
+}
