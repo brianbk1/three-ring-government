@@ -1,0 +1,45 @@
+{
+ "slug": "new-tariffs-16-economies-overcapacity-probe-refunds-november-2026",
+ "date": "NOV 24, 2026",
+ "kicker": "THE WHITE HOUSE • TRADE",
+ "headline": [
+  "16 ECONOMIES.",
+  "NEW TARIFFS",
+  "ON DECK."
+ ],
+ "accent_line": "CHINA HIGHEST?",
+ "hook": [
+  "The White House is readying tariffs to replace the ones the Supreme Court struck down.",
+  "In June, refunds of old tariffs ran twice what customs collected."
+ ],
+ "cta": "The tariff math, by the numbers →",
+ "hero_title": [
+  "16 economies.",
+  "New tariffs",
+  "on deck."
+ ],
+ "hero_sub": "June 2026 customs: $49.2B refunded vs. $23.6B collected, after a $33.1B peak month in Oct. 2025 (Tax Foundation)",
+ "data": {
+  "title": [
+   "REFUNDS OUTRAN",
+   "TARIFF COLLECTIONS"
+  ],
+  "subtitle": "U.S. customs duties by month, in billions",
+  "bars": [
+   ["REFUNDED, JUN '26", 49.18, "$49.2B", true],
+   ["COLLECTED, JUN '26", 23.63, "$23.6B", false],
+   ["COLLECTED, OCT '25", 33.09, "$33.1B", false]
+  ],
+  "unit_note": "Oct. 2025 was the peak month for gross collections. June 2026 net: -$25.6B",
+  "callouts": [
+   ["16", "Economies in USTR's subsidy probe"],
+   ["≤15%", "Reported cap for EU, Japan, Korea"]
+  ],
+  "source": "Tax Foundation; USTR; WSJ via Investing.com"
+ },
+ "hero_labels": [
+  "$49.2B",
+  "$23.6B",
+  "$33.1B"
+ ]
+}
