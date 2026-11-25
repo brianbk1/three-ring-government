@@ -1,0 +1,49 @@
+{
+ "slug": "ustr-proposes-tariffs-14-economies-vietnam-35-china-20-november-2026",
+ "date": "NOV 25, 2026",
+ "kicker": "THE WHITE HOUSE • TRADE",
+ "headline": [
+  "14 ECONOMIES.",
+  "NEW TARIFFS",
+  "PROPOSED."
+ ],
+ "accent_line": "VIETNAM: 35%.",
+ "hook": [
+  "USTR proposed tariffs of 15% to 35% over industrial overcapacity. Vietnam drew the top rate.",
+  "Mexico, with a $196.9B U.S. goods deficit in 2025, was held back."
+ ],
+ "cta": "The rates and the trade math →",
+ "hero_title": [
+  "14 economies.",
+  "New tariffs",
+  "proposed."
+ ],
+ "hero_sub": "Proposed ceilings: Vietnam 35%, India 25%, China 20%, EU 15%. Comments due Jan. 5; hearing Jan. 25 (USTR)",
+ "data": {
+  "title": [
+   "THE PROPOSED",
+   "TARIFF CEILINGS"
+  ],
+  "subtitle": "Maximum proposed Section 301 rate, Nov. 25, 2026. Proposed, not final.",
+  "bars": [
+   ["VIETNAM", 35, "35%", true],
+   ["INDIA", 25, "25%", false],
+   ["CHINA", 20, "20%", false],
+   ["5 OTHERS*", 18, "18%", false],
+   ["EU, JAPAN", 15, "15%", false]
+  ],
+  "unit_note": "*Bangladesh, Cambodia, Indonesia, Malaysia, Thailand. Korea, Switzerland, Taiwan also 15%",
+  "callouts": [
+   ["14", "Economies hit, of 16 investigated"],
+   ["$196.9B", "2025 goods deficit with Mexico, held back"]
+  ],
+  "source": "USTR; U.S. Census Bureau/BEA"
+ },
+ "hero_labels": [
+  "VN",
+  "IN",
+  "CN",
+  "5 more",
+  "EU"
+ ]
+}
