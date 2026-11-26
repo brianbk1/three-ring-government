@@ -1,0 +1,51 @@
+{
+ "slug": "judge-blocks-fcc-early-review-8-abc-station-licenses-first-amendment-november-2026",
+ "date": "NOV 26, 2026",
+ "kicker": "THE COURTS • MEDIA",
+ "headline": [
+  "8 ABC LICENSES.",
+  "EARLY REVIEW",
+  "FROZEN."
+ ],
+ "accent_line": "ABC WINS ROUND 1.",
+ "hook": [
+  "A judge blocked the FCC's early review of all 8 ABC-owned station licenses.",
+  "The FCC says it's about DEI. It says the ruling is wrong."
+ ],
+ "cta": "The timeline and the math →",
+ "hero_title": [
+  "8 ABC licenses.",
+  "Early review",
+  "frozen."
+ ],
+ "hero_sub": "Licenses were called in 2.6 to 5.3 years early, one day after Trump's post on Kimmel (FCC schedule; Variety)",
+ "data": {
+  "title": [
+   "HOW EARLY EACH",
+   "LICENSE WAS CALLED"
+  ],
+  "subtitle": "Years from the FCC's Apr. 28, 2026 order to each license's regular expiration.",
+  "bars": [
+   ["PHILA.", 5.26, "5.3 YRS", true],
+   ["NEW YORK", 5.09, "5.1 YRS", true],
+   ["3 CALIF.*", 4.59, "4.6 YRS", false],
+   ["HOUSTON", 4.26, "4.3 YRS", false],
+   ["CHICAGO", 3.59, "3.6 YRS", false],
+   ["RALEIGH", 2.60, "2.6 YRS", false]
+  ],
+  "unit_note": "*Los Angeles, San Francisco, Fresno. Years early: our calculation from FCC dates",
+  "callouts": [
+   ["1 DAY", "From Trump's Kimmel post to the FCC order"],
+   ["50+ YRS", "Since the FCC last used the tool, per reports"]
+  ],
+  "source": "FCC renewal schedule; Variety; Reason"
+ },
+ "hero_labels": [
+  "PHL",
+  "NYC",
+  "CA x3",
+  "HOU",
+  "CHI",
+  "RDU"
+ ]
+}
