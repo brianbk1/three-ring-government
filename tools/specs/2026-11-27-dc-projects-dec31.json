@@ -1,0 +1,47 @@
+{
+ "slug": "trump-dc-projects-dec-31-planning-commission-8-4-to-6-6-november-2026",
+ "date": "NOV 27, 2026",
+ "kicker": "THE WHITE HOUSE • CONGRESS",
+ "headline": [
+  "A NEW YEAR'S EVE",
+  "VOTE FOR TRUMP'S",
+  "D.C. PROJECTS."
+ ],
+ "accent_line": "8-4 NOW. 6-6 SOON.",
+ "hook": [
+  "A planning panel set a Dec. 31 meeting, 3 days before Democrats take Congress.",
+  "Two GOP seats on the panel flip, and a tie can't approve anything."
+ ],
+ "cta": "The seat math and the costs →",
+ "hero_title": [
+  "A New Year's Eve",
+  "vote for Trump's",
+  "D.C. projects."
+ ],
+ "hero_sub": "Reported White House ballroom cost estimates climbed from about $200M to about $600M (Axios; WaPo)",
+ "data": {
+  "title": [
+   "THE BALLROOM'S",
+   "PRICE TAG, AS REPORTED"
+  ],
+  "subtitle": "Reported cost estimates for the White House ballroom, in millions of dollars.",
+  "bars": [
+   ["FIRST PITCH", 200, "~$200M", false],
+   ["TRUMP, LATER", 400, "$300-400M", false],
+   ["WAPO, JUNE*", 600, "~$600M", true],
+   ["PRIVATE SHARE*", 293, "$293M", false]
+  ],
+  "unit_note": "*Washington Post, from contractor summary and records. White House says it's privately funded",
+  "callouts": [
+   ["8-4", "Planning panel's vote for the arch, Nov. 5"],
+   ["6-6", "Likely split from Jan. 3. Ties fail"]
+  ],
+  "source": "Axios; Washington Post via KXAN; AP; Newsmax"
+ },
+ "hero_labels": [
+  "PITCH",
+  "TRUMP",
+  "WAPO",
+  "PRIV."
+ ]
+}
